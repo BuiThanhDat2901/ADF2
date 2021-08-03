@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public abstract class ConnectionHelper {
+public class ConnectionHelper {
 
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/%s";
-    private static final String DATABASE_NAME = "daily-news";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/%s?useUnicode=true&characterEncoding=utf-8";
+    private static final String DATABASE_NAME = "t2012e_reflection";
     private static final String DATABASE_USER = "root";
     private static final String DATABASE_PWD = "";
     private static Connection cnn;
@@ -19,7 +19,6 @@ public abstract class ConnectionHelper {
                     DATABASE_USER,
                     DATABASE_PWD);
         }
-
         return cnn;
     }
 }
